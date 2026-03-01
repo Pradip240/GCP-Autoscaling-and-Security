@@ -1,0 +1,3 @@
+fastapi==0.135.0
+uvicorn[standard]
+aiohttp==3.13.3
