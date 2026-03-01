@@ -6,7 +6,7 @@ TARGET_URL = "http://localhost:8080/cpu"
 REQUESTS_PER_SECOND = 10
 
 
-async def send_request(session):
+async def send_request(session: aiohttp.ClientSession):
     try:
         async with session.get(TARGET_URL) as response:
             await response.text()
@@ -17,7 +17,7 @@ async def send_request(session):
 
 async def generate_load():
     async with aiohttp.ClientSession() as session:
-        for _idx in range(10): # run for 10 sec
+        for _idx in range(120): # run for 120 sec
             start_time = time.time()
 
             tasks = [
