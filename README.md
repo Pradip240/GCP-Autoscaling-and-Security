@@ -92,6 +92,19 @@ sudo apt install -y curl git
 git clone https://github.com/Pradip240/GCP-Autoscaling-and-Security.git
 ```
 
+Install gcloud
+```bash
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates gnupg curl
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee /etc/apt/sources.list.d/google-cloud-sdk.list
+
+sudo apt update
+sudo apt install -y google-cloud-sdk
+```
+
 Authenticate the terminal
 ```bash
 gcloud auth activate-service-account --key-file=/home/pradip/autoscale-key.json
